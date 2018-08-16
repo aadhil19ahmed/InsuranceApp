@@ -1,0 +1,976 @@
+﻿{
+  "dynamicContentPages": {
+    "Pagetype": "ContentPage",
+    "Screenname": "Personal",
+    "Section": [
+      {
+        "type": "Forms",
+        "title": "Let's talk about you",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Last Name",
+            "q_id": 102,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "last_name_1514898748",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "First Name",
+            "q_id": 103,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "first_name_1514898724",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Title",
+            "q_id": 104,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "title_1514898470",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Mr"
+              },
+              {
+                "id": 2,
+                "name": "Mrs"
+              },
+              {
+                "id": 3,
+                "name": "Miss"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Gender",
+            "q_id": 105,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "gender_1514898891",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Female"
+              },
+              {
+                "id": 2,
+                "name": "Male"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Suffix",
+            "q_id": 106,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "suffix_1514898820",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Jr"
+              },
+              {
+                "id": 2,
+                "name": "II"
+              },
+              {
+                "id": 3,
+                "name": "Sr"
+              },
+              {
+                "id": 4,
+                "name": "III"
+              },
+              {
+                "id": 5,
+                "name": "IV"
+              },
+              {
+                "id": 6,
+                "name": "I"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "MI",
+            "q_id": 107,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "mi_1514898735",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Marital Status",
+            "q_id": 108,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "marital_status_1514899005",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Divorced"
+              },
+              {
+                "id": 2,
+                "name": "Please Select"
+              },
+              {
+                "id": 3,
+                "name": " Married"
+              },
+              {
+                "id": 4,
+                "name": "Living with Partner"
+              },
+              {
+                "id": 5,
+                "name": "Separated"
+              },
+              {
+                "id": 6,
+                "name": "Civil Partnership"
+              },
+              {
+                "id": 7,
+                "name": "Widowed"
+              },
+              {
+                "id": 8,
+                "name": "Single"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Date of Birth",
+            "q_id": 109,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "date_of_birth_1514898978",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Town \/ City",
+            "q_id": 110,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "town_\/_city_1514899237",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "ZipCode",
+            "q_id": 111,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "zipcode_1514899190",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Email Address",
+            "q_id": 112,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "email_address_1514899178",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Mobile No",
+            "q_id": 113,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "mobile_no_1514899154",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Address",
+            "q_id": 114,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "address_1514899260",
+            "InputType": "TEXTVIEW",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "State",
+            "q_id": 115,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "state_1514899249",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizenship Start Date",
+            "q_id": 116,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "citizenship_sta_1514899321",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizen By Birth",
+            "q_id": 117,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "citizen_by_birt_1514899303",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizenship",
+            "q_id": 118,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "citizenship_1514899273",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          }
+        ],
+        "table_name": "let's_talk_about_you"
+      },
+      {
+        "type": "Forms",
+        "title": "Occupation",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Occupation Type",
+            "q_id": 119,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "occupation_type_1514899467",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Please Select"
+              },
+              {
+                "id": 2,
+                "name": "Retired"
+              },
+              {
+                "id": 3,
+                "name": "Employed"
+              },
+              {
+                "id": 4,
+                "name": "UnEmployed"
+              },
+              {
+                "id": 5,
+                "name": " Self - Employed"
+              },
+              {
+                "id": 6,
+                "name": "Full time Education"
+              },
+              {
+                "id": 7,
+                "name": " Employed due to disability"
+              },
+              {
+                "id": 8,
+                "name": "Home Maker"
+              },
+              {
+                "id": 9,
+                "name": " Voluntary"
+              },
+              {
+                "id": 10,
+                "name": "Independant means"
+              }
+            ]
+          }
+        ],
+        "table_name": "occupation_type"
+      },
+      {
+        "type": "Forms",
+        "title": "Driving Details",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Will the policy holder be a named driver for the car?",
+            "q_id": 120,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "will_the_policy_1514899686",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ],
+            "dependent_views": [
+              {
+                "qid": 141,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 142,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 143,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Does the policy holder have any motor accidents or claims in the last 5 years?",
+            "q_id": 121,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "does_the_policy_1514899696",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ],
+            "dependent_views": [
+              {
+                "qid": 148,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 149,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 151,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Claim Date",
+            "q_id": 148,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "Claim_Date_1514899273",
+            "InputType": "DatePickerView",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Claim Amount",
+            "q_id": 149,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "Claim_Amount_1514899273",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Claim Type",
+            "q_id": 151,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "claim_the_policy_1514899696",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Accicdent"
+              },
+              {
+                "id": 2,
+                "name": "Theft"
+              },
+              {
+                "id": 3,
+                "name": "Fire"
+              },
+              {
+                "id": 4,
+                "name": "Wind Screen glass"
+              },
+              {
+                "id": 5,
+                "name": "Malicious Damage"
+              },
+              {
+                "id": 6,
+                "name": "Storm or Flood"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Driving License Number?",
+            "q_id": 142,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "license_the_policy_1514899696",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "License Type",
+            "q_id": 141,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "license_the_policy_1514899696",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Class A"
+              },
+              {
+                "id": 2,
+                "name": "Class B"
+              },
+              {
+                "id": 3,
+                "name": "Class C"
+              },
+              {
+                "id": 4,
+                "name": "Class D"
+              },
+              {
+                "id": 5,
+                "name": "Class E"
+              },
+              {
+                "id": 6,
+                "name": "CDL"
+              },
+              {
+                "id": 7,
+                "name": "Class MJ"
+              },
+              {
+                "id": 8,
+                "name": "Class DJ"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "License Duration",
+            "q_id": 143,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "license_the_duration_1514899696",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Less than a year"
+              },
+              {
+                "id": 2,
+                "name": "1"
+              },
+              {
+                "id": 3,
+                "name": "2"
+              },
+              {
+                "id": 4,
+                "name": "3"
+              },
+              {
+                "id": 5,
+                "name": "4"
+              },
+              {
+                "id": 6,
+                "name": "5"
+              },
+              {
+                "id": 7,
+                "name": "6"
+              },
+              {
+                "id": 8,
+                "name": "7"
+              },
+              {
+                "id": 9,
+                "name": "8"
+              },
+              {
+                "id": 10,
+                "name": "9"
+              },
+              {
+                "id": 11,
+                "name": "10"
+              },
+              {
+                "id": 12,
+                "name": "11"
+              },
+              {
+                "id": 13,
+                "name": "12"
+              },
+              {
+                "id": 14,
+                "name": "13"
+              },
+              {
+                "id": 15,
+                "name": "14"
+              },
+              {
+                "id": 16,
+                "name": "15"
+              },
+              {
+                "id": 17,
+                "name": "16"
+              },
+              {
+                "id": 18,
+                "name": "17"
+              },
+              {
+                "id": 19,
+                "name": "18"
+              },
+              {
+                "id": 20,
+                "name": "19"
+              },
+              {
+                "id": 20,
+                "name": "20"
+              },
+              {
+                "id": 21,
+                "name": "20 + year"
+              }
+            ]
+          }
+        ],
+        "table_name": "driving_details"
+      },
+      {
+        "type": "Forms",
+        "title": "Nominee",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Will the policy have a nominee?",
+            "q_id": 122,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "will_the_policy_1514899762",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ],
+            "dependent_views": [
+              {
+                "qid": 127,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 128,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 129,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 130,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 131,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 132,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              },
+              {
+                "qid": 133,
+                "selected_value": [
+                  true
+                ],
+                "visibility": true
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "nominee_title",
+            "q_id": 127,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "nominee_title_15148545986",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Please Select"
+              },
+              {
+                "id": 2,
+                "name": "Mr."
+              },
+              {
+                "id": 3,
+                "name": "Mrs."
+              },
+              {
+                "id": 4,
+                "name": "Miss"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "nominee_gender",
+            "q_id": 128,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "nominee_gender_15786545986",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "nominee_first_name",
+            "q_id": 129,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "nominee_first_name_15786543346",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "nominee_last_name",
+            "q_id": 130,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "nominee_last_name_15752443346",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "nominee_date_of_birth",
+            "q_id": 131,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "nominee_dob_157555424346",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "appointee_name",
+            "q_id": 132,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "appointee_name_157555445756",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "relationship_with_appointee",
+            "q_id": 133,
+            "default_visibility": false,
+            "regex": "",
+            "columnName": "relationshiop_with_appointee_157175445756",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Please Select"
+              },
+              {
+                "id": 2,
+                "name": "Spouse"
+              },
+              {
+                "id": 3,
+                "name": "Parent(Father)"
+              },
+              {
+                "id": 4,
+                "name": "Parent(Mother)"
+              },
+              {
+                "id": 5,
+                "name": "Child"
+              },
+              {
+                "id": 6,
+                "name": "Legal Heir"
+              }
+            ]
+          }
+        ],
+        "table_name": "nominee"
+      },
+      {
+        "type": "Forms",
+        "title": "Some more information",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Does the policy holder have any children under 16 years old?",
+            "q_id": 123,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "does_the_policy_1514899846",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Is the policy holder a homeowner?",
+            "q_id": 124,
+            "default_visibility": true,
+            "regex": "",
+            "columnName": "is_the_policy_h_1514899834",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "How many cars do you have at home?",
+            "q_id": 125,
+            "default_visibility": true,
+            "regex": "email",
+            "columnName": "how_many_cars_d_1514899860",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          //{
+          //  "viewtype": "FormSubView",
+          //  "name": "Social Security Number",
+          //  "q_id": 126,
+          //  "default_visibility": true,
+          //  "regex": "",
+          //  "columnName": "social_security_1514899871",
+          //  "InputType": "TEXT",
+          //  "min_value": 0,
+          //  "max_value": 0,
+          //  "InputOptions": [
+
+          //  ]
+          //},
+          {
+            "viewtype": "ButtonView",
+            "name": "Save and Continue",
+            "q_id": 190,
+            "default_visibility": true,
+            "regex": "",
+            "url" :  "PersonalForm.json",
+            "columnName": "social_security_1514899871",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          }
+        ],
+        "table_name": "some_more_information"
+      }
+    ]
+  }
+}

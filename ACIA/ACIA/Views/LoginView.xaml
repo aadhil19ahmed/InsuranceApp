@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.LoginView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+                <Image x:Name="LogoImage" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
+                   Margin="5,25,5,5" HeightRequest="80" WidthRequest="80"/>
+
+            <Label Text="Enter Username:" Margin="10,15,10,2" HorizontalOptions="Fill" TextColor="#FC6A5B"/>
+                <Entry x:Name="UsernameEntry" />
+
+            <Label Text="Enter Password:" Margin="10,15,10,2" HorizontalOptions="Fill" TextColor="#FC6A5B"/>
+                <Entry x:Name="PasswordEntry" IsPassword="True"/>
+
+                <Button Text="Login" TextColor="#ffffff" WidthRequest="150" HeightRequest="35"
+                        HorizontalOptions="Center" Margin="5,5,5,5" BackgroundColor="#FC6A5B" Clicked="SubmitButton_Clicked"/>
+                
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

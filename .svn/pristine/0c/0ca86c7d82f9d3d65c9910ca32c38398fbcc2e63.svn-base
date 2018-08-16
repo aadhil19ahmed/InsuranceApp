@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:behaviors="clr-namespace:ACIA.Behaviors;assembly=ACIA" xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" BackgroundColor="#e8e8e8" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.PersonalFormView" NavigationPage.HasBackButton="False">
+    <ContentPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS, Android, UWP, WinRT, WinPhone" Value="Personal" />
+        </OnPlatform>
+    </ContentPage.Title>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DatetimeConverter x:Key="DatetimeConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+     </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 0, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <!-- Master -->
+     <StackLayout>
+        
+        <!-- Step -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Step 1/5" Style="{StaticResource TitleLabelStyle}"/>
+        </StackLayout>
+
+        <ScrollView>
+         <StackLayout>
+        
+            <!-- Let's talk about you -->
+            <StackLayout x:Name="Section" Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Let's talk about you" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Title*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- InputViewStack -->
+                    <StackLayout x:Name="InputViewStack">
+                        <Picker x:Name="TitlePicker"  ItemsSource="{Binding Titles}"
+                        SelectedItem="{Binding Title.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label 
+                        Text="{Binding Title.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                        Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="FirstName*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="FirstNameStack">
+                        <Entry x:Name="FirstNameEntry" Text="{Binding FirstName.Value, Mode=TwoWay}" />
+                        <Label 
+                            Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" /> 
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Last Name*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="LastNameStack">
+                        <Entry x:Name="LastNameEntry" Text="{Binding LastName.Value, Mode=TwoWay}" />
+                        <Label 
+                            Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="MI" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="MIStack">
+                        <Entry x:Name="MiddleInitialNameEntry" Text="{Binding MiddleInitial.Value, Mode=TwoWay}" >
+                        <Entry.Behaviors>
+                            <behaviors:EntryLengthValidatorBehavior MaxLength="1"/>
+                        </Entry.Behaviors>
+                        </Entry>
+                        <Label 
+                            Text="{Binding MiddleInitial.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Suffix" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Picker x:Name="SuffixPicker" ItemsSource="{Binding Suffices}"
+                    SelectedItem="{Binding Suffix, Mode=TwoWay}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gender*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="GenderStack">
+                        <Picker x:Name="GenderPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding Genders}"
+                        SelectedItem="{Binding Gender.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding Gender.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Date Of Birth*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="DOBStack">
+                        <DatePicker x:Name="DOBPicker" Style="{StaticResource PickerInputStyle}" Date="{Binding DateOfBirth.Value, Converter={StaticResource DatetimeConverter}"/>
+                        <Label 
+                            Text="{Binding DateOfBirth.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" /> 
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Martial Status*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="MartialStatusStack">
+                        <Picker x:Name="MartialStatusPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding MStatus}"
+                            SelectedItem="{Binding MartialStatus.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding MartialStatus.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Mobile Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="MobileNumberStack">
+                        <Entry x:Name="MobileNumberEntry" Text="{Binding MobileNumber.Value, Mode=TwoWay}" Keyboard= "Numeric" >
+                        <Entry.Behaviors>
+                            <behaviors:EntryLengthValidatorBehavior MaxLength="10"/>
+                        </Entry.Behaviors>
+                        </Entry>
+                        <Label 
+                            Text="{Binding MobileNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Email Address*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="EmailAddressStack">
+                        <Entry x:Name="EmailAddressEntry" Text="{Binding EmailAddress.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding EmailAddress.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="ZipCode*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ZipcodeStack">
+                       <Entry x:Name="ZipCodeEntry" Text="{Binding Zipcode.Value, Mode=TwoWay}" Keyboard= "Numeric">
+                       <Entry.Behaviors>
+                            <behaviors:EntryLengthValidatorBehavior MaxLength="6"/>
+                        </Entry.Behaviors>
+                       </Entry>
+                       <Label 
+                            Text="{Binding Zipcode.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Town/City" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="CityEntry" Text="{Binding Town, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="State" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="StateEntry" Text="{Binding State, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Address*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="AddressStack">
+                        <StackLayout BackgroundColor="#D3D3D3" Padding="1">
+                            <Editor x:Name="AddressEditor" BackgroundColor="White" Text="{Binding Address.Value, Mode=TwoWay}" />
+                        </StackLayout>
+                        <Label 
+                            Text="{Binding Address.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Citizenship*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="CitizenShipStack">
+                      <Entry x:Name="CitizenShipEntry" Text="{Binding CitizenShip.Value, Mode=TwoWay}" />
+                      <Label 
+                            Text="{Binding CitizenShip.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />      
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Citizen By Birth*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsCitizenSwitch" IsToggled="{Binding CitizenByBirth, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsCitizenByBirthCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsCitizenByBirthVisibility}">
+                    <Label Text="Citizenship Start Date*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="CitizenshipStartDateStack">
+                        <DatePicker x:Name="CitizenShipStartDateEntry" Style="{StaticResource PickerInputStyle}" Date="{Binding CitizenshipStartDate.Value, Converter={StaticResource DatetimeConverter}"/>
+                        <Label 
+                            Text="{Binding CitizenshipStartDate.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Occupation -->
+            <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Occupation" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Occupation Type*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                        <StackLayout x:Name="OccupationTypeStack">
+                            <Picker x:Name="OccupationTypePicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding OccupationTypes}"
+                                     SelectedItem="{Binding OccupationType.Value, Mode=TwoWay}">
+                                <Picker.Behaviors>
+                                    <behaviors:EventToCommandBehavior EventName="SelectedIndexChanged"
+                                      Command="{Binding OccupationPickerCommand}"/>
+                                </Picker.Behaviors>
+                            </Picker>
+                        <Label 
+                            Text="{Binding OccupationType.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />   
+                    </StackLayout>
+                </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding OccupationPickerVisibility}">
+                    <Label Text="Industry*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="IndustryStack">
+                        <Picker x:Name="IndustryPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding Industries}"
+                        SelectedItem="{Binding Industry.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding Industry.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding OccupationPickerVisibility}">
+                    <Label Text="Job Functions*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="JobFunctionsStack">
+                       <Picker x:Name="JobFunctionsPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding JobFunction}"
+                        SelectedItem="{Binding JobFunctions.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding JobFunctions.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Driving Details -->
+            <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Driving Details" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Will the policy holder be a named driver for the car?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                        <Switch x:Name="IsNamedDriverSwitch" IsToggled="{Binding IsNamedDriver, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsNamedDriverCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>
+                   
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsNamedDriverVisibility}">
+                    <Label Text="License Type*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="LicenseTypeStack">
+                        <Picker x:Name="LicenseTypePicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding LicenseTypes}"
+                        SelectedItem="{Binding LicenseType.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding LicenseType.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />   
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsNamedDriverVisibility}">
+                    <Label Text="License Duration*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="LicenseDurationStack">
+                        <Picker x:Name="LicenseDurationPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding LicenseDurations}"
+                        SelectedItem="{Binding LicenseDuration.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding LicenseDuration.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" /> 
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsNamedDriverVisibility}">
+                    <Label Text="Driving License Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="DrivingLicenseNumberStack">
+                        <Entry x:Name="DrivingLicenseNumberEntry" Text="{Binding DrivingLicenseNumber.Value, Mode=TwoWay}" Keyboard= "Numeric"/>
+                        <Label 
+                            Text="{Binding DrivingLicenseNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Does the policy holder have any motor accidents or claims in the last 5 years?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsHaveAccidentsOrClaimsSwitch" IsToggled="{Binding IsHaveAccidentsOrClaims, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsHaveAccidentsOrClaimsCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveAccidentsOrClaimsVisibility}">
+                    <Label Text="Claim Date*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ClaimDateStack">
+                        <DatePicker x:Name="ClaimDateEntry" Style="{StaticResource PickerInputStyle}" Date="{Binding ClaimDate.Value, Converter={StaticResource DatetimeConverter}"/>
+                        <Label 
+                            Text="{Binding ClaimDate.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveAccidentsOrClaimsVisibility}">
+                    <Label Text="Claim Amount*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ClaimAmountStack">
+                        <Entry x:Name="ClaimAmountEntry" Text="{Binding ClaimAmount.Value, Mode=TwoWay}" Keyboard= "Numeric"/>
+                        <Label 
+                            Text="{Binding ClaimAmount.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />     
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveAccidentsOrClaimsVisibility}">
+                    <Label Text="Claim Type*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ClaimTypeStack">
+                        <Picker x:Name="ClaimTypePicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding ClaimTypes}"
+                        SelectedItem="{Binding ClaimType.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding ClaimType.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                
+            </StackLayout>   
+
+            <!-- Any Convictions -->
+            <StackLayout Style="{StaticResource SectionStyle}" IsVisible="{Binding IsNamedDriverVisibility}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Any Convictions" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Does the policy holder have convictions within the last 5 years?" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsHaveConvictionsSwitch" IsToggled="{Binding IsHaveConviction, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsHaveConvictionsCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Conviction Date*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ConvictionDateStack">
+                      <DatePicker x:Name="ConvictionDateEntry" Style="{StaticResource PickerInputStyle}" Date="{Binding ConvictionDate.Value, Converter={StaticResource DatetimeConverter}"/>
+                      <Label 
+                            Text="{Binding ConvictionDate.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />     
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Points incurred" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="PointsIncurredEntry" Text="{Binding PointsIncurred, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard= "Numeric"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Ban Length" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="BanLengthEntry" Text="{Binding BanLength, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard= "Numeric"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Breathalyser Reading*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                     <StackLayout x:Name="BreathalyserReadingStack">
+                        <Entry x:Name="BreathalyserReadingEntry" Text="{Binding BreathalyserReading.Value, Mode=TwoWay}" Keyboard= "Numeric"/>
+                        <Label 
+                            Text="{Binding BreathalyserReading.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                     </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Fine incurred" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="FineIncurredEntry" Text="{Binding FineIncurred, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard= "Numeric"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Does Driver Breathalysed?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsBreathalysedSwitch" IsToggled="{Binding IsBreathalysed, Mode=TwoWay}">
+                              
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Was the offence accident related?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                      <Switch x:Name="IsAccidentSwitch" IsToggled="{Binding IsAccident, Mode=TwoWay}">
+                              
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveConvictionsVisibility}">
+                    <Label Text="Conviction Type*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="ConvictionTypeStack">
+                        <Picker x:Name="ConvictionTypePicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding ConvictionTypes}"
+                        SelectedItem="{Binding ConvictionType.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding ConvictionType.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />   
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Nominee -->
+            <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nominee" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Will the policy have a nominee?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                     <Switch x:Name="IsHaveNomineeSwitch" IsToggled="{Binding IsHaveNominee, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsHaveNomineeCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Nominee Title*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeTitleStack">
+                        <Picker x:Name="NomineeTitlePicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding NomineeTitles}"
+                        SelectedItem="{Binding NomineeTitle.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding NomineeTitle.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Relationship with Nominee*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeRelationshipStack">
+                        <Picker x:Name="NomineeRelationshipPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding RelationShips}"
+                        SelectedItem="{Binding NomineeRelationship.Value, Mode=TwoWay}"/>
+                        <Label 
+                            Text="{Binding NomineeRelationship.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Nominee Gender*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeGenderStack">
+                       <Picker x:Name="NomineeGenderPicker" Style="{StaticResource PickerInputStyle}" ItemsSource="{Binding Genders}"
+                        SelectedItem="{Binding NomineeGender.Value, Mode=TwoWay}"/>
+                       <Label 
+                            Text="{Binding NomineeGender.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Nominee First Name*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeFirstNameStack">
+                        <Entry x:Name="NomineeFirstNameEntry" Text="{Binding NomineeFirstName.Value, Mode=TwoWay}"  />
+                        <Label 
+                            Text="{Binding NomineeFirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Nominee Date of Birth*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeDOBStack">
+                        <DatePicker x:Name="NomineeDOBPicker" Style="{StaticResource PickerInputStyle}" Date="{Binding NomineeDOB.Value, Converter={StaticResource DatetimeConverter}"/>
+                        <Label 
+                            Text="{Binding NomineeDOB.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Nominee Last Name*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="NomineeLastNameStack">
+                        <Entry x:Name="NomineeLastNameEntry" Text="{Binding NomineeLastName.Value, Mode=TwoWay}" />
+                        <Label 
+                            Text="{Binding NomineeLastName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />    
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="{Binding IsHaveNomineeVisibility}">
+                    <Label Text="Appointee Name*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <StackLayout x:Name="AppointeeNameStack">
+                       <Entry x:Name="AppointeeNameEntry" Text="{Binding AppointeeName.Value, Mode=TwoWay}" />
+                       <Label 
+                            Text="{Binding AppointeeName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
+                            Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Some more information -->
+            <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Some more information" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="How many cars do you have at home?" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="NoOfCarsEntry" Text="{Binding IsHaveCars, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard= "Numeric"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Social Security Number" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Entry x:Name="SecurityNumberEntry" Text="{Binding SocialSecurityNumber, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard= "Numeric"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Is the policy holder a homeowner?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsHomwOwnerSwitch" IsToggled="{Binding IsHomeOwner, Mode=TwoWay}">
+                              
+                    </Switch>
+                </StackLayout>
+                 <StackLayout Orientation="Horizontal">
+                    <Label Text="Does the policy holder have any children under 16 years old?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Switch x:Name="IsHaveChildSwitch" IsToggled="{Binding IsHaveChild, Mode=TwoWay}">
+                              
+                    </Switch>
+                </StackLayout>
+           </StackLayout>    
+         
+          </StackLayout> 
+         </ScrollView>   
+
+        <!-- Save and continue -->
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="5,0,5,0">
+            <Button Text="Previous" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding PreviousCommand}"/>
+            <Button Text="Continue Later" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding SaveAndContinueLaterCommand}"/>
+            <Button Text="Next" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+     </StackLayout>   
+</ContentPage>  

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" 
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true"  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ACIA.Views.PoliciesListView">
+
+    <ContentPage.Resources>
+    <ResourceDictionary x:Name="AppDictionary">
+      <Color x:Key="BackgroundColor">#fdfdfd</Color>
+      <Color x:Key="BorderColor">#E1E1E1</Color>
+      <Style x:Key="InternalViewStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="Padding" Value="3,0,3,3"></Setter>
+      </Style>
+      <Style x:Key="BorderStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Padding" Value="3,0,2,3"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f8f8f8">
+      <Label Text="Quotes for 1 year policy" HeightRequest="30" BackgroundColor="#f8f8f8" VerticalOptions="Start" FontSize="15"
+             HorizontalOptions="FillAndExpand" TextColor="#000000" VerticalTextAlignment="Center" Margin="5,3,0,2" />
+      
+      <ListView x:Name="InsuranceLists" RowHeight="120" ItemTapped="OnItemTapped" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+             <ContentView Padding="0" >
+    <ContentView Style="{StaticResource BorderStyle}" >
+      <ContentView Style="{StaticResource InternalViewStyle}">
+        <StackLayout Orientation="Horizontal" Padding="0">
+              <Image Source="{Binding ImageName,StringFormat='{0}.png'}" />
+          <StackLayout>
+           <Label Text="{Binding Name}" FontSize="15" Margin="5,8,0,2" TextColor="#fb6c5e" FontAttributes="Bold"/>
+          <Label Text="{Binding CostDetails}" Margin="5,3,0,2" FontSize="12" TextColor="#9FA1AA" FontAttributes ="Bold"/>
+          <Label Text="{Binding BriefSummary}" FontSize="11" Margin="5,3,0,2" TextColor="#9FA1AA" FontAttributes ="Bold"/>
+          </StackLayout>
+              <Image Source="" HorizontalOptions="EndAndExpand" Margin="15,15,5,15" Aspect="AspectFit" WidthRequest="10" HeightRequest="30"/>
+            </StackLayout>
+      </ContentView>
+    </ContentView>
+  </ContentView>
+           
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

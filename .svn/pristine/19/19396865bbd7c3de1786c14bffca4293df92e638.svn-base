@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:behaviors="clr-namespace:ACIA.Behaviors;assembly=ACIA" xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" 
+    xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+    BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.DriverDetailsFormView" NavigationPage.HasBackButton="False">
+	<ContentPage.Title>
+    <OnPlatform x:TypeArguments="x:String">
+      <On Platform="iOS, Android, UWP, WinRT, WinPhone" Value="Driver Details" />
+    </OnPlatform>
+  </ContentPage.Title>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DatetimeConverter x:Key="DatetimeConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+     </ContentPage.Resources>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="0, 0, 0, 0" />
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <StackLayout>
+
+    <!-- Step -->
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Step 3/5" Style="{StaticResource TitleLabelStyle}"/>
+    </StackLayout>
+
+    <StackLayout>
+
+      <!-- Drivers added to this policy -->
+      <StackLayout x:Name="Section" Style="{StaticResource SectionStyle}">
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Drivers added to this policy" Style="{StaticResource SectionTitleLabelStyle}"/>
+        </StackLayout>
+        
+        <!--Showing Driver Details-->
+          
+                    <StackLayout Orientation="Horizontal" HeightRequest="90" Padding="5">
+                        <Image Source="pic_profile_circle.png" HorizontalOptions="Center" Aspect="AspectFit" WidthRequest="40"
+                         HeightRequest="40" Margin="25,5,0,0"/>
+                        <Label x:Name="FirstName" Text="{Binding FirstName}"
+                         HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                        <Label  x:Name="LastName" Text="{Binding LastName}"
+                         HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                        
+                    </StackLayout>
+                
+
+        <Label Text="You have already added the policy holder as your driver" Style="{StaticResource QuestionTitleLabelStyle}"/>
+        <!--Asking for adding another driver-->
+        <!--<StackLayout Orientation="Horizontal">
+          <Label Text="Do you want to add another driver?" Style="{StaticResource QuestionTitleLabelStyle}"/>
+          <Switch x:Name="IsAddDriverSwitch" IsToggled="{Binding IsDriverAdd, Mode=TwoWay}">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding IsAddDriverCommand}" />
+                        </Switch.Behaviors>       
+                    </Switch>  
+        </StackLayout>-->
+
+      </StackLayout>
+
+    </StackLayout>
+
+    <!-- Save and continue -->
+    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+      <Button Text="Previous" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding PreviousCommand}"/>
+      <Button Text="Continue Later" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding SaveAndContinueLaterCommand}"/>
+      <Button Text="Next" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+
+  </StackLayout>
+</ContentPage>

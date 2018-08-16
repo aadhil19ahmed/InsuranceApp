@@ -1,0 +1,83 @@
+﻿{
+  "dynamicContentPages": {
+    "Pagetype": "ContentPage",
+    "Screenname": "Dashboard",
+    "Section": [
+      {
+        "type": "CMSGrid",
+        "title": "Insurance Categories",
+        "Views": [
+          {
+            "viewtype": "imageview",
+            "name": "Messages",
+            "image": "pic_messages",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "My Policies",
+            "image": "pic_my_policies",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Performance",
+            "image": "pic_performances",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "New Quote",
+            "image": "pic_getquote",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Claims",
+            "image": "pic_claims",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Renew",
+            "image": "pic_renew",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Agent",
+            "image": "pic_agent",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Branch",
+            "image": "pic_branch",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "Feedback",
+            "image": "pic_feedback",
+            "shouldGoToCMS": 0,
+            "url": ""
+          }
+        ],
+        "options": {
+          "GridSize": {
+            "row": 3,
+            "column": 3
+          }
+        }
+      }
+    ]
+  }
+}

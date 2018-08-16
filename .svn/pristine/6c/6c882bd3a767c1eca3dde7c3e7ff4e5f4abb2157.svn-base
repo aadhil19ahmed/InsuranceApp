@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.CongratsView">
+	<ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Image x:Name="TickMark" HeightRequest="60" WidthRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="Congratulations!!" FontAttributes="Bold" TextColor="#fc6a5b" FontSize="20" HorizontalOptions="Center"/>
+            <Label Text="You have succesfully generated a quote" TextColor="#fc6a5b" FontSize="18" HorizontalOptions="Center"/>
+
+            <Button Text="Back to home" BackgroundColor="#fc6a5b" Clicked="OnClicked" WidthRequest="100" VerticalOptions="EndAndExpand"
+            Margin="10,10,10,30" TextColor="#ffffff"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

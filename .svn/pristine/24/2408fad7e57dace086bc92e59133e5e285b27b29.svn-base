@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:behaviors="clr-namespace:ACIA.Behaviors;assembly=ACIA" xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+    BackgroundColor="#e8e8e8" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.CarFormVinView" NavigationPage.HasBackButton="False">
+<ContentPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS, Android, UWP, WinRT, WinPhone" Value="Car" />
+        </OnPlatform>
+    </ContentPage.Title>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DatetimeConverter x:Key="DatetimeConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+     </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 0, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <!-- Master -->
+     <StackLayout Spacing="2">
+         <!-- Step -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Step 2/5" Style="{StaticResource TitleLabelStyle}"/>
+        </StackLayout>
+
+        <ScrollView>
+            <StackLayout>
+            <!-- Vehicle Identification Number -->
+            <StackLayout x:Name="Section" Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Vehicle Identification Number(VIN)*" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                    
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Enter VIN Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- VINStack -->
+                    <StackLayout x:Name="VINStack" Spacing="3" >
+                    <Entry x:Name="VINEntry" Text="{Binding VIN.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard = "Numeric"/>
+                    <Label Text="{Binding VIN.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Tips" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Label Text="Every VIN has 17 alpha/numeric characters" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Label Text="The Letters I,O and Q are never used" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Label Text="Atleast 6 characters are numeric" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <Label Text="Common typing mistakes are B for 8, S for 5, O for 0, I for 1 or vice versa" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                </StackLayout>
+                    
+             </StackLayout>
+            
+
+             <!-- Car Information -->
+            <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Car Information" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Primary Use*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                     <!-- PrimaryUseStack -->
+                    <StackLayout x:Name="PrimaryUseStack"> 
+                    <Picker x:Name="PrimaryUsePicker" ItemsSource="{Binding PrimaryUses}" SelectedItem="{Binding PrimaryUse.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                    <Label Text="{Binding PrimaryUse.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Primary Zip Location*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- PrimaryZipStack -->
+                    <StackLayout x:Name="PrimaryZipStack">
+                    <Entry x:Name="PrimaryZipEntry" Text="{Binding PrimaryZipLocation.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}" Keyboard = "Numeric"/>
+                    <Label Text="{Binding PrimaryZipLocation.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Own or Lease?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- OwnLeaseStack -->
+                    <StackLayout x:Name="OwnLeaseStack">
+                    <Picker x:Name="OwnLeasePicker" ItemsSource="{Binding OwnLeases}" SelectedItem="{Binding OwnLease.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                    <Label Text="{Binding OwnLease.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                 </StackLayout>
+                    
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Type of Security/Alarm*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                      <!-- SecurityAlarmStack -->
+                    <StackLayout x:Name="SecurityAlarmStack">   
+                    <Picker x:Name="SecurityAlarmPicker" ItemsSource="{Binding SecurityAlarms}" SelectedItem="{Binding SecurityAlarm.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                    <Label Text="{Binding OwnLease.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>  
+               </StackLayout>
+          
+        </StackLayout>
+          </StackLayout>
+                    
+        </ScrollView>
+
+
+        <!-- Save and continue -->
+         <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="5,0,5,2">
+            <Button Text="Previous" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding PreviousCommand}"/>
+            <Button Text="Continue Later" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding SaveAndContinueLaterCommand}"/>
+            <Button Text="Next" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"
+            />
+        </StackLayout>
+        
+     </StackLayout>
+       
+
+    
+</ContentPage>
+

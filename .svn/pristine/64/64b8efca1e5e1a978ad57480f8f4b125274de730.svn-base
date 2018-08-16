@@ -1,0 +1,36 @@
+﻿{
+  "dynamicContentPages": {
+    "Pagetype": "ContentPage",
+    "Screenname": "EpiServer Dashboard",
+    "Section": [
+      {
+        "type": "Carousel",
+        "title": "",
+        "Views": [
+          {
+            "viewtype": "imageview",
+            "name": "",
+            "image": "banner.png",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "",
+            "image": "banner_one.png",
+            "shouldGoToCMS": 0,
+            "url": ""
+          },
+          {
+            "viewtype": "imageview",
+            "name": "",
+            "image": "banner_two.png",
+            "shouldGoToCMS": 0,
+            "url": ""
+          }
+         
+        ]
+      }
+    ]
+  }
+}

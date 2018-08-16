@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ACIA.Views.InsuranceListingView" Title="Insurance Categories" NavigationPage.HasBackButton="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+
+
+            <!--Automobile ListView-->
+            <StackLayout x:Name="AutoPlusListStack">
+
+        <StackLayout x:Name="AutoStackLayout" HeightRequest="70">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                <Label Text="Automobile" HorizontalOptions="Start" TextColor="#fb6c5d" FontSize="18" FontAttributes="Bold" 
+                FontFamily="HelveticaNeue-Medium" Margin="15,10,5,0"/>
+                <Label Text="Includes Car,Motorbike,LV etc" TextColor="Gray" HorizontalOptions="Start" FontSize="12" FontFamily="HelveticaNeue-Medium"
+                   Margin="17,5,5,5"/>
+                 </StackLayout>
+                <Image  x:Name="AutoDropDown" Source="ic_action_expand_dark.png" HorizontalOptions="EndAndExpand" HeightRequest="35" WidthRequest="35" BackgroundColor="White"
+               VerticalOptions="Center" Aspect="AspectFit" Margin="5,5,10,5">
+                    <!--<Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAutoTapped"/>
+                        </Image.GestureRecognizers>-->
+                    </Image>
+             </StackLayout>
+           <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnAutoTapped"/>            
+           </StackLayout.GestureRecognizers>
+        </StackLayout>
+          
+          <ListView x:Name="Automobiletypes" IsVisible="{Binding AutoListVisibility}" ItemSelected="OnItemSelected" RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HeightRequest="50">
+                                    <Image Source="{Binding AutoImage}" HorizontalOptions="Start" Margin="10,5,5,5" WidthRequest="50"
+                                           VerticalOptions="Center" Aspect="AspectFit"/>
+                                    <Label Text="{Binding AutoName}" Margin="15,3,3,3" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
+                                           FontSize="20" TextColor="#fb6c5d"/>
+  
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!--HomeLayout-->
+            <StackLayout x:Name="HomePlusListStack">
+            <BoxView BackgroundColor="#e8e8e8" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+        <StackLayout x:Name="HomeStackLayout" HeightRequest="70">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                <Label Text="Home" HorizontalOptions="Start" TextColor="#fb6c5d" FontSize="18" FontAttributes="Bold" 
+                FontFamily="HelveticaNeue-Medium" Margin="15,10,5,0"/>
+                <Label Text="Includes Renters,condo,home owner etc" TextColor="Gray" HorizontalOptions="Start" FontSize="12" FontFamily="HelveticaNeue-Medium"
+                   Margin="17,5,5,5"/>
+                 </StackLayout>
+                <Image x:Name="HomeDropDown" Source="ic_action_expand_dark.png" HorizontalOptions="EndAndExpand" HeightRequest="35" WidthRequest="35"
+               VerticalOptions="Center" Aspect="AspectFit" Margin="5,5,10,5" BackgroundColor="White"/>
+             </StackLayout>
+             <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnHomeTapped"/>            
+           </StackLayout.GestureRecognizers>
+            </StackLayout>
+                
+                <ListView x:Name="Hometypes" IsVisible="{Binding HomeListVisibility}" RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HeightRequest="50">
+                                    <Image Source="{Binding HomeImage}" HorizontalOptions="Start" Margin="10,5,5,5"
+                                           VerticalOptions="Center" Aspect="AspectFill"/>
+                                    <Label Text="{Binding HomeName}" Margin="15,3,3,3" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
+                                           FontSize="20" TextColor="#fb6c5d"/>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!--HealthLayout-->
+            <StackLayout x:Name="HealthStack">
+                <BoxView BackgroundColor="#e8e8e8" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+        <StackLayout x:Name="HealthStackLayout" HeightRequest="70">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                <Label Text="Health" HorizontalOptions="Start" TextColor="#fb6c5d" FontSize="18" FontAttributes="Bold" 
+                FontFamily="HelveticaNeue-Medium" Margin="15,10,5,0"/>
+                <Label Text="Includes Heart,Surgery,Ortho etc" TextColor="Gray" HorizontalOptions="Start" FontSize="12" FontFamily="HelveticaNeue-Medium"
+                   Margin="17,5,5,5"/>
+                 </StackLayout>
+                <Image x:Name="HealthDropDown" Source="ic_action_expand_dark.png" HorizontalOptions="EndAndExpand" HeightRequest="35" WidthRequest="35"
+               VerticalOptions="Center" Aspect="AspectFit" Margin="5,5,10,5" BackgroundColor="White"/>
+             </StackLayout>
+            </StackLayout>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnHealthTapped"/>            
+           </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <!--TravelLayout-->
+            <StackLayout x:Name="TravelStack">
+                <BoxView BackgroundColor="#e8e8e8" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+        <StackLayout x:Name="TravelStackLayout" HeightRequest="70">
+            <StackLayout Orientation="Horizontal">
+                <StackLayout>
+                <Label Text="Travel" HorizontalOptions="Start" TextColor="#fb6c5d" FontSize="18" FontAttributes="Bold" 
+                FontFamily="HelveticaNeue-Medium" Margin="15,10,5,0"/>
+                <Label Text="Includes Flight,accidents,physical injuries etc" TextColor="Gray" HorizontalOptions="Start" FontSize="12" FontFamily="HelveticaNeue-Medium"
+                   Margin="17,5,5,5"/>
+                 </StackLayout>
+                <Image Source="ic_action_expand_dark.png" HorizontalOptions="EndAndExpand" HeightRequest="35" WidthRequest="35" BackgroundColor="White"
+               VerticalOptions="Center" Aspect="AspectFit" Margin="5,5,10,5"/>
+             </StackLayout>
+            </StackLayout>
+                <BoxView BackgroundColor="#e8e8e8" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTravelTapped"/>            
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            
+        </StackLayout>
+
+            
+    </ContentPage.Content> 
+</ContentPage>

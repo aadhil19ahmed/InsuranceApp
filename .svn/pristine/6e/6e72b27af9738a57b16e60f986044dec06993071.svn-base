@@ -1,0 +1,477 @@
+﻿{
+  "dynamicContentPages": {
+    "Pagetype": "ContentPage",
+    "Screenname": "Personal",
+    "Section": [
+      {
+        "type": "Forms",
+        "title": "Let's talk about you",
+        "submit_button_title": "",
+        "submit_url": "",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Last Name",
+            "q_id": 102,
+            "columnName": "last_name_1514898748",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "First Name",
+            "q_id": 103,
+            "columnName": "first_name_1514898724",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Title",
+            "q_id": 104,
+            "columnName": "title_1514898470",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Mr"
+              },
+              {
+                "id": 2,
+                "name": "Mrs"
+              },
+              {
+                "id": 3,
+                "name": "Miss"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Gender",
+            "q_id": 105,
+            "columnName": "gender_1514898891",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Female"
+              },
+              {
+                "id": 2,
+                "name": "Male"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Suffix",
+            "q_id": 106,
+            "columnName": "suffix_1514898820",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Jr"
+              },
+              {
+                "id": 2,
+                "name": "II"
+              },
+              {
+                "id": 3,
+                "name": "Sr"
+              },
+              {
+                "id": 4,
+                "name": "III"
+              },
+              {
+                "id": 5,
+                "name": "IV"
+              },
+              {
+                "id": 6,
+                "name": "I"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "MI",
+            "q_id": 107,
+            "columnName": "mi_1514898735",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Marital Status",
+            "q_id": 108,
+            "columnName": "marital_status_1514899005",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Divorced"
+              },
+              {
+                "id": 2,
+                "name": "Please Select"
+              },
+              {
+                "id": 3,
+                "name": " Married"
+              },
+              {
+                "id": 4,
+                "name": "Living with Partner"
+              },
+              {
+                "id": 5,
+                "name": "Separated"
+              },
+              {
+                "id": 6,
+                "name": "Civil Partnership"
+              },
+              {
+                "id": 7,
+                "name": "Widowed"
+              },
+              {
+                "id": 8,
+                "name": "Single"
+              }
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Date of Birth",
+            "q_id": 109,
+            "columnName": "date_of_birth_1514898978",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Town \/ City",
+            "q_id": 110,
+            "columnName": "town_\/_city_1514899237",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "ZipCode",
+            "q_id": 111,
+            "columnName": "zipcode_1514899190",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Email Address",
+            "q_id": 112,
+            "columnName": "email_address_1514899178",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Mobile No",
+            "q_id": 113,
+            "columnName": "mobile_no_1514899154",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Address",
+            "q_id": 114,
+            "columnName": "address_1514899260",
+            "InputType": "TEXTVIEW",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "State",
+            "q_id": 115,
+            "columnName": "state_1514899249",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizenship Start Date",
+            "q_id": 116,
+            "columnName": "citizenship_sta_1514899321",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizen By Birth",
+            "q_id": 117,
+            "columnName": "citizen_by_birt_1514899303",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Citizenship",
+            "q_id": 118,
+            "columnName": "citizenship_1514899273",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          }
+        ],
+        "table_name": "let's_talk_about_you"
+      },
+      {
+        "type": "Forms",
+        "title": "Occupation",
+        "submit_button_title": "",
+        "submit_url": "",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Occupation Type",
+            "q_id": 119,
+            "columnName": "occupation_type_1514899467",
+            "InputType": "PICKER",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+              {
+                "id": 1,
+                "name": "Please Select"
+              },
+              {
+                "id": 2,
+                "name": "Retired"
+              },
+              {
+                "id": 3,
+                "name": "Employed"
+              },
+              {
+                "id": 4,
+                "name": "UnEmployed"
+              },
+              {
+                "id": 5,
+                "name": " Self - Employed"
+              },
+              {
+                "id": 6,
+                "name": "Full time Education"
+              },
+              {
+                "id": 7,
+                "name": " Employed due to disability"
+              },
+              {
+                "id": 8,
+                "name": "Home Maker"
+              },
+              {
+                "id": 9,
+                "name": " Voluntary"
+              },
+              {
+                "id": 10,
+                "name": "Independant means"
+              }
+            ]
+          }
+        ],
+        "table_name": "occupation_type"
+      },
+      {
+        "type": "Forms",
+        "title": "Driving Details",
+        "submit_button_title": "",
+        "submit_url": "",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Will the policy holder be a named driver for the car?",
+            "q_id": 120,
+            "columnName": "will_the_policy_1514899686",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Does the policy holder have any motor accidents or claims in the last 5 years?",
+            "q_id": 121,
+            "columnName": "does_the_policy_1514899696",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          }
+        ],
+        "table_name": "driving_details"
+      },
+      {
+        "type": "Forms",
+        "title": "Nominee",
+        "submit_button_title": "",
+        "submit_url": "",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Will the policy have a nominee?",
+            "q_id": 122,
+            "columnName": "will_the_policy_1514899762",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          }
+        ],
+        "table_name": "nominee"
+      },
+      {
+        "type": "Forms",
+        "title": "Some more information",
+        "submit_button_title": "Save and Continue",
+        "submit_url": "CarForm.json",
+        "Views": [
+          {
+            "viewtype": "FormSubView",
+            "name": "Does the policy holder have any children under 16 years old?",
+            "q_id": 123,
+            "columnName": "does_the_policy_1514899846",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Is the policy holder a homeowner?",
+            "q_id": 124,
+            "columnName": "is_the_policy_h_1514899834",
+            "InputType": "SWITCH",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "How many cars do you have at home?",
+            "q_id": 125,
+            "columnName": "how_many_cars_d_1514899860",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "FormSubView",
+            "name": "Social Security Number",
+            "q_id": 126,
+            "columnName": "social_security_1514899871",
+            "InputType": "TEXT",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ]
+          },
+          {
+            "viewtype": "ButtonView",
+            "name": "Save and Continue",
+            "q_id": 126,
+            "columnName": "social_security_1514899871",
+            "InputType": "Button",
+            "min_value": 0,
+            "max_value": 0,
+            "InputOptions": [
+
+            ],
+            "url": "CarForm.json"
+          }
+        ],
+        "table_name": "some_more_information"
+      }
+    ]
+  }
+}

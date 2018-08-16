@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" 
+    xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" BackgroundColor="Gray"
+    x:Class="ACIA.Views.CarFormMakeView">
+
+    <ContentPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS, Android, UWP, WinRT, WinPhone" Value="Car" />
+        </OnPlatform>
+    </ContentPage.Title>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DatetimeConverter x:Key="DatetimeConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+     </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <!-- Master -->
+    <StackLayout>
+
+            <!-- Step -->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Step 2/5" Style="{StaticResource TitleLabelStyle}"/>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                
+                    <!-- Car Registration -->
+                    <StackLayout  x:Name= "Section" Style="{StaticResource SectionStyle}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Car Registration" Style="{StaticResource SectionTitleLabelStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Registration Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- InputViewStack -->
+                            <StackLayout x:Name="RegistrationStack">
+                                <Entry x:Name="RegistrationEntry" Text="{Binding RegistrationNumber.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                                <Label Text="{Binding RegistrationNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Chassis Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- ChassisStack -->
+                            <StackLayout x:Name="ChassisStack">
+                                <Entry x:Name="ChassisEntry" Text="{Binding ChassisNumber.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                                <Label Text="{Binding ChassisNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Registration Date*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- RegistrationStack -->
+                            <StackLayout x:Name="RegistrationDateStack">
+                                <DatePicker x:Name="RegistrationDatePicker" Style="{StaticResource PickerInputStyle}" Date="{Binding RegistrationDate.Value, Converter={StaticResource DatetimeConverter}"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Engine Number*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- EngineStack -->
+                            <StackLayout x:Name="EngineStack">
+                                <Entry x:Name="EngineEntry" Text="{Binding EngineNumber.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                                <Label Text="{Binding EngineNumber.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Make and Model -->
+                    <StackLayout Style="{StaticResource SectionStyle}">
+                <StackLayout Orientation="Horizontal">
+
+                    <Label Text="Make and Model" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Make*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- MakeStack -->
+                    <StackLayout x:Name="MakeStack">
+                        <Picker x:Name="MakePicker"  ItemsSource="{Binding Makes}" SelectedItem="{Binding Make.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label Text="{Binding Make.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Model*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- ModelStack -->
+                    <StackLayout x:Name="ModelStack">
+                        <Picker x:Name="ModelPicker"  ItemsSource="{Binding Models}" SelectedItem="{Binding Model.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label Text="{Binding Model.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Year of Manufacturer*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- YearStack -->
+                    <StackLayout x:Name="YearStack">
+                        <Picker x:Name="YearPicker"  ItemsSource="{Binding Years}" SelectedItem="{Binding Year.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label Text="{Binding Year.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Body Type" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- BodyTypeStack -->
+                    <StackLayout x:Name="BodyTypeStack">
+                        <Picker x:Name="BodyTypePicker"  ItemsSource="{Binding Bodys}" SelectedItem="{Binding Body.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label Text="{Binding Body.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Driver Type" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                    <!-- DriverStack -->
+                    <StackLayout x:Name="DriverStack">
+                        <Picker x:Name="DriverPicker"  ItemsSource="{Binding Drivers}" SelectedItem="{Binding Driver.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        <Label Text="{Binding Driver.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                        <Label Text="Fuel Type" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                        <!-- FuelStack -->
+                        <StackLayout x:Name="FuelStack">
+                            <Picker x:Name="FuelPicker"  ItemsSource="{Binding Fuels}" SelectedItem="{Binding Fuel.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                            <Label Text="{Binding Fuel.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                        </StackLayout>
+
+                    </StackLayout>
+               
+            </StackLayout>
+
+
+            <!-- Security Features -->
+                    <StackLayout Style="{StaticResource SectionStyle}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Security Features" Style="{StaticResource SectionTitleLabelStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Safety Feature" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="SafetyPicker"  ItemsSource="{Binding Safetys}"
+                    SelectedItem="{Binding Safety.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Security Feature" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="SecurityPicker"  ItemsSource="{Binding Securitys}"
+                    SelectedItem="{Binding Security.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <!-- Modifications -->
+                    <StackLayout Style="{StaticResource SectionStyle}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Modifications" Style="{StaticResource SectionTitleLabelStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Have you done any modifications on your car?" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- ModificationsStack -->
+                            <StackLayout x:Name="ModificationsStack">
+                                <Picker x:Name="ModificationsPicker"  ItemsSource="{Binding YesOrNo}" SelectedItem="{Binding IsModified.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                                <Label Text="{Binding IsModified.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Accessories" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="AccessoriesPicker"  ItemsSource="{Binding AccessoriesTypes}"
+                    SelectedItem="{Binding Accessories, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Body Modifications" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="BodyModificationsPicker"  ItemsSource="{Binding BodyModificationTypes}"
+                    SelectedItem="{Binding BodyModifications, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Brakes / Suspension/ Steering" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="BrakesPicker"  ItemsSource="{Binding BrakeTypes}"
+                    SelectedItem="{Binding Brakes, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Engine  / Transmission" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="EnginePicker"  ItemsSource="{Binding EngineTypes}"
+                    SelectedItem="{Binding Engine, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Paintwork / Stickers" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="PaintworkPicker"  ItemsSource="{Binding Paintworks}"
+                    SelectedItem="{Binding Paintwork, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Spoilers / Bodykits" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="SpoilersPicker"  ItemsSource="{Binding SpoilerTypes}"
+                    SelectedItem="{Binding Spoilers, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Wheels / Tyres" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <Picker x:Name="WheelsPicker"  ItemsSource="{Binding WheelTypes}"
+                    SelectedItem="{Binding Wheels, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <!-- Ownership -->
+                    <StackLayout Style="{StaticResource SectionStyle}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ownership" Style="{StaticResource SectionTitleLabelStyle}"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Select your ownership type of the car?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- OwnershiptypeStack -->
+                            <StackLayout x:Name="OwnershipTypeStack">
+                                <Picker x:Name="OwnershipPicker"  ItemsSource="{Binding OwnershipTypes}" SelectedItem="{Binding OwnershipType.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                                <Label Text="{Binding OwnershipType.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Registered Keeper*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!--RegisteredKeeperStack-->
+                            <StackLayout x:Name="RegisteredKeeperStack">
+                                <Picker x:Name="RegisteredKeeper"  ItemsSource="{Binding RegisteredKeepertypes}" SelectedItem="{Binding RegisteredKeeper.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                                <Label Text="{Binding RegisteredKeeper.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name of Registered Keeper*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!--RegisteredKeeperNameStack-->
+                            <StackLayout x:Name="RegisteredKeeperNameStack">
+                                <Entry x:Name="RegisteredKeeperNameEntry" Text="{Binding RegisteredKeeperName.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                                <Label Text="{Binding RegisteredKeeperName.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Legal Owner*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!--LegalOwnerStack-->
+                            <StackLayout x:Name="LegalOwnerStack">
+                                <Picker x:Name="LegalOwnerPicker" ItemsSource="{Binding LegalOwnerTypes}" SelectedItem="{Binding LegalOwner.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                                <Label Text="{Binding LegalOwner.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name of Legal Owner*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!--LegalOwnerNameStack-->
+                            <StackLayout x:Name="LegalOwnerNameStack">
+                                <Entry x:Name="LegalOwnerName" Text="{Binding LegalOwnerName.Value, Mode=TwoWay}" Style="{StaticResource EntryInputStyle}"/>
+                                <Label Text="{Binding LegalOwnerName.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Do you want policy in your Name?*" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                            <!-- PolicyNameStack -->
+                            <StackLayout x:Name="PolicyNameStack">
+                                <Picker x:Name="PolicyNamePicker"  ItemsSource="{Binding YesOrNo}" SelectedItem="{Binding PolicyInName.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}"/>
+                                <Label Text="{Binding PolicyInName.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            <!-- Save and continue -->
+             <StackLayout Orientation="Horizontal">
+                    <Button Text="Save And Continue Later" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Save And Continue" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"
+                Clicked="OnClicked"/>
+                </StackLayout>
+                
+            </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,75 @@
+﻿{
+  "type": "CMSGrid",
+  "title": "Insurance Categories",
+  "Views": [
+    {
+      "viewtype": "imageview",
+      "name": "Login",
+      "image": "ACIA.CommonResources.Images.profilepicture.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Health",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000273.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Business",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000275.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Automobile",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000278.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Home",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000274.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Manage Claims",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000276.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Newsfeed",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000277.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Life",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000279.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    },
+    {
+      "viewtype": "imageview",
+      "name": "Travel",
+      "image": "http:\/\/172.24.144.144\/directus-api\/storage\/uploads\/00000000280.png",
+      "shouldGoToCMS": 0,
+      "url": ""
+    }
+  ],
+  "options": {
+    "GridSize": {
+      "row": 3,
+      "column": 3
+    }
+  }
+}

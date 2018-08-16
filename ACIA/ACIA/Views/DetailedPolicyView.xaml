@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+    BackgroundColor="Gray" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ACIA.Views.DetailedPolicyView">
+    <ContentPage.Content>
+        <ScrollView>
+      <StackLayout Spacing="0">
+        <!-- Section Name-->
+        <Label Text="   POLICY COVERAGE" HeightRequest="30" VerticalOptions="Start" TextColor="#fb6c5e" VerticalTextAlignment="End" FontSize="15" BackgroundColor="#ffffff"/>
+
+        <!-- Titlebar for table-->
+        <StackLayout Orientation="Horizontal" HeightRequest="25" BackgroundColor="#fc6a5b">
+          <BoxView WidthRequest="1" BackgroundColor="#ffffff"/>
+          <Label Text="  Policy Name" FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="2" BackgroundColor="#ffffff"/>
+          <Label Text="Choice Amt." FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="100" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="2" BackgroundColor="#ffffff"/>
+          <Label Text="Recommended Amt." FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="1" BackgroundColor="#ffffff"/>
+        </StackLayout>
+
+        <!-- ListView Code-->
+        <ListView x:Name="InsuranceSplitDetails" RowHeight="40" SeparatorVisibility="Default" SeparatorColor="#e1e1e1" ItemTapped="OnItemTapped" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff">
+                  <BoxView WidthRequest="1" BackgroundColor="#e1e1e1"/>
+                  <Label Text=" {Binding PropertyName}" FontSize="12"  HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center" BackgroundColor="#ffffff"/>
+                  <BoxView WidthRequest="2" BackgroundColor="#e1e1e1"/>
+                  <Label Text="{Binding ChoiceAmount}" FontSize="12"  HorizontalOptions="CenterAndExpand" WidthRequest="100" VerticalTextAlignment="Center" BackgroundColor="#ffffff"/>
+                  <BoxView WidthRequest="2" BackgroundColor="#e1e1e1"/>
+                  <Label Text="{Binding RecommendedAmount}" FontSize="12" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center" BackgroundColor="#ffffff"/>
+                  <BoxView WidthRequest="1" BackgroundColor="#e1e1e1"/>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Section Name-->
+        <Label Text="   FEES" HeightRequest="30" TextColor="#fb6c5e"
+               VerticalTextAlignment="End" FontSize="15" HorizontalOptions="FillAndExpand" BackgroundColor="#ffffff"/>
+
+        <!-- Titlebar for table-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="25" BackgroundColor="#fc6a5b">
+          <BoxView WidthRequest="1" BackgroundColor="#ffffff"/>
+          <Label Text="  Policy Name" FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="2" BackgroundColor="#ffffff"/>
+          <Label Text="Choice Amt." FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="100" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="2" BackgroundColor="#ffffff"/>
+          <Label Text="Recommended Amt." FontSize="12" TextColor="#ffffff" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+          <BoxView WidthRequest="1" BackgroundColor="#ffffff"/>
+        </StackLayout>
+                
+                 <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff">
+                  <BoxView WidthRequest="1" BackgroundColor="#e1e1e1"/>
+                  <Label Text="Low Enforcement Fees" FontSize="12"  HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+                  <BoxView WidthRequest="2" BackgroundColor="#e1e1e1"/>
+                  <Label Text="60" FontSize="12"  HorizontalOptions="CenterAndExpand" WidthRequest="100" VerticalTextAlignment="Center"/>
+                  <BoxView WidthRequest="2" BackgroundColor="#e1e1e1"/>
+                  <Label Text="90" FontSize="12" HorizontalOptions="CenterAndExpand" WidthRequest="120" VerticalTextAlignment="Center"/>
+                  <BoxView WidthRequest="1" BackgroundColor="#e1e1e1"/>
+                </StackLayout>
+              
+
+      </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

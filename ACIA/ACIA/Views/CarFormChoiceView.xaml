@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns:behaviors="clr-namespace:ACIA.Behaviors;assembly=ACIA" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:ACIA.Converters;assembly=ACIA" 
+    xmlns:viewModelBase="clr-namespace:ACIA.ViewModels.Base;assembly=ACIA" viewModelBase:ViewModelLocator.AutoWireViewModel="true" BackgroundColor="White" NavigationPage.HasBackButton="False"
+    x:Class="ACIA.Views.CarFormChoiceView">
+    <ContentPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS, Android, UWP, WinRT, WinPhone" Value="Car" />
+        </OnPlatform>
+    </ContentPage.Title>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DatetimeConverter x:Key="DatetimeConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+     </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 0, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <!-- Master -->
+     <StackLayout>
+        
+        <!-- Step -->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Step 2/5" Style="{StaticResource TitleLabelStyle}"/>
+        </StackLayout>
+
+        <StackLayout>
+        
+            <!-- Here are the cars on your choice -->
+           
+                <StackLayout x:Name= "Section" Orientation="Horizontal">
+                    <Label Text="Here are the cars on your quote" Style="{StaticResource SectionTitleLabelStyle}"/>
+                </StackLayout>
+
+             <!--<ListView x:Name="CarDetails" RowHeight="90" SeparatorVisibility="None" SeparatorColor="#000000">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>-->
+                <!--<StackLayout IsVisible="{Binding VehicleChoiceVisibility}">
+                <StackLayout Orientation="Horizontal" HeightRequest="90" Padding="5" >
+                        <Image Source="pic_car" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit" WidthRequest="40"
+                         HeightRequest="40" Margin="25,5,0,0"/>
+                        <Label  x:Name="MakeName" Text="{Binding CarMake}"
+                         HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label  x:Name="ModelName" Text="{Binding CarModel}" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                <Label   Text="Do you want to add another vehicle?" Style="{StaticResource QuestionTitleLabelStyle}"
+                         HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+                    -->
+                            
+                <!--</ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+-->
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Add Vehicle By" Style="{StaticResource QuestionTitleLabelStyle}"/>
+                <StackLayout x:Name="AddVehicleStack">
+                    <Picker x:Name="AddVehiclePicker"  ItemsSource="{Binding VehicleChoices}" SelectedItem="{Binding VehicleChoice.Value, Mode=TwoWay}" Style="{StaticResource PickerInputStyle}">
+                    <Picker.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding AddVehicleCommand}"/>
+                     </Picker.Behaviors>
+                     </Picker>
+                     <Label Text="{Binding VehicleChoice.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                </StackLayout>
+        </StackLayout>
+            
+        </StackLayout> 
+
+        <!-- Save and continue -->
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="5,0,5,0">
+            <Button Text="Previous" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding PreviousCommand}"/>
+            <Button Text="Continue Later" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand" Command="{Binding SaveAndContinueLaterCommand}"/>
+            <Button Text="Next" Command="{Binding SaveCommand}" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"/>
+<!--            <Button Text="Next" Clicked="OnClicked" Style="{StaticResource ButtonStyle}" HorizontalOptions="FillAndExpand"/>
+-->        </StackLayout>
+        
+  </StackLayout>   
+</ContentPage>
+
